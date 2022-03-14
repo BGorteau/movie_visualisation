@@ -1,0 +1,11 @@
+"0","```r
+countries <- c()
+for(i in OMDB$Country){
+  for(j in str_split(i,\", \")){
+    countries <- c(countries, j)
+  }
+}
+t_count <- as_tibble(table(countries))
+t_count <- arrange(t_count,-n)[c(1:10),]
+t_count
+```"

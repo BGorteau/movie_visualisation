@@ -1,0 +1,11 @@
+"0","```r
+actors <- c()
+for(i in OMDB$Cast){
+  for(j in str_split(i,\", \")){
+    actors <- c(actors, j)
+  }
+}
+t_act <- as_tibble(table(actors))
+t_act <- arrange(t_act,-n)[c(1:10),]
+t_act
+```"

@@ -1,0 +1,9 @@
+"0","```r
+ImDb_score <- function(movie_name){
+  movie <- filter(OMDB, Title == movie_name)
+  bands = data.frame(start = c(0), end = c(10), 
+                   color = c(\"#ffac29\"),
+                   stringsAsFactors = FALSE)
+  return(amAngularGauge(x = movie$imdbRating,start = 0, end=10, step = 1,bands = bands, main = movie_name))
+}
+```"

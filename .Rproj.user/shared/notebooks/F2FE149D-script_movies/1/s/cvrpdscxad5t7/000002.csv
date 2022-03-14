@@ -1,0 +1,8 @@
+"0","oscars <- function(film){"
+"0","      rec <- c()"
+"0","      movie <- filter(OMDB, Title== film)"
+"0","      for(i in movie[19]){"
+"0","        rec <- c(rec,i)"
+"0","      }"
+"0","      return(paste(""Oscars :"",rec[1]))"
+"0","    }"

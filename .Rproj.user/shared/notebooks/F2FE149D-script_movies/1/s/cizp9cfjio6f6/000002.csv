@@ -1,0 +1,9 @@
+"0","```r
+comparaison_quanti <- function(val1, val2, max){
+  if(is.na(val1)!=TRUE && is.na(val2)!=TRUE){
+    return(1-(abs(as.numeric(val1)-as.numeric(val2))/max))
+  } else {
+    return(0)
+  }
+}
+```"

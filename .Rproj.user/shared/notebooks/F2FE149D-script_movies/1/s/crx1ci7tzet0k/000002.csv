@@ -1,0 +1,13 @@
+"0","```r
+comparaison_quali <- function(string, string_comp){
+  score <- 0
+  for(i in str_split(string, \", \")){
+    for(j in i){
+      if(grepl(j,string_comp)==TRUE){
+        score <- score + 1
+      }
+    }
+  }
+  return(score)
+}  
+```"

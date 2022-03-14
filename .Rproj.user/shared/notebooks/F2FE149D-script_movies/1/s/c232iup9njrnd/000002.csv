@@ -1,0 +1,2 @@
+"0","OMDB <- read.csv(""data/omdb.csv"", sep="","", header = TRUE, row.names = 1)"
+"0","OMDB <- as_tibble(OMDB)"

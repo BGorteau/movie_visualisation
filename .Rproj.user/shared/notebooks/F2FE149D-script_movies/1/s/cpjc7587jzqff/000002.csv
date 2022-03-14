@@ -1,0 +1,63 @@
+"0","```r
+similar_movies <- function(film){
+  # On sélectionne le film dans la base de donnée 
+  movie <- filter(OMDB, Title== film)
+  
+  # On créé la base de donnée sans le film qu'on choisit
+  df_comp <- filter(OMDB, !Title == film)
+  
+  # On créé le vecteur des scores de comparaison
+  vect_score <- rep(0,nrow(df_comp))
+  
+  #------------------------------------------------------------------
+  
+  # --- Variables qualitatives --- #
+  
+  # Genres :
+  for(i in seq(nrow(df_comp))){
+    vect_score[i] <- vect_score[i]+comparaison_quali(movie[7],df_comp[i,7])
+  }
+  
+  # Réalisateur :
+  for(i in seq(nrow(df_comp))){
+    vect_score[i] <- vect_score[i]+comparaison_quali(movie[9],df_comp[i,9])
+  }
+  
+  # Acteurs :
+  for(i in seq(nrow(df_comp))){
+    vect_score[i] <- vect_score[i]+comparaison_quali(movie[11],df_comp[i,11])
+  }
+  
+  # Langue :
+  for(i in seq(nrow(df_comp))){
+    vect_score[i] <- vect_score[i]+comparaison_quali(movie[15],df_comp[i,15])
+  }
+  
+  # Pays :
+  for(i in seq(nrow(df_comp))){
+    vect_score[i] <- vect_score[i]+comparaison_quali(movie[16],df_comp[i,16])
+  }
+  # --- Variables quantitatives --- #
+  # Metascore
+  for(i in seq(nrow(df_comp))){
+    vect_score[i] <- vect_score[i]+comparaison_quanti(movie[12],df_comp[i,12],100)
+  }
+  
+  # ImDb rating
+  for(i in seq(nrow(df_comp))){
+    vect_score[i] <- vect_score[i]+comparaison_quanti(movie[13],df_comp[i,13],10)
+  }
+  
+  #------------------------------------------------------------------
+  
+  # Jointure du vecteur des score avec la base de donnée sans le film
+  df_comp <- df_comp %>%
+  add_column(vect_score)
+  
+  # Tri de la base en fonction du score
+  df_comp <- arrange(df_comp, -vect_score)
+  
+  return(df_comp)
+}
+
+```"

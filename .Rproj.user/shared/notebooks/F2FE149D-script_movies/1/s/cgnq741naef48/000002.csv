@@ -1,0 +1,6 @@
+"0","```r
+hist(as.numeric(OMDB$Rating))
+```"
+"1","Avis dans hist(as.numeric(OMDB$Rating)) :
+  NAs introduits lors de la conversion automatique
+"

@@ -1,0 +1,4 @@
+"0","```r
+amBarplot(x = \"realisateurs\", y = \"n\", data = t_real,
+          labelRotation = -45, main=\"Nombre de films par realisateur\", horiz = TRUE, groups_color = \"blue\")
+```"

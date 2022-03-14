@@ -1,0 +1,9 @@
+"0","```r
+metascore_score <- function(movie_name){
+  movie <- filter(OMDB, Title == movie_name)
+  bands = data.frame(start = c(0, 40, 60), end = c(40, 60, 100), 
+                   color = c(\"#00CC00\", \"#ffac29\", \"#ea3838\"),
+                   stringsAsFactors = FALSE)
+  return(amAngularGauge(x = movie$Metacritic, bands = bands, main = movie_name))
+}
+```"

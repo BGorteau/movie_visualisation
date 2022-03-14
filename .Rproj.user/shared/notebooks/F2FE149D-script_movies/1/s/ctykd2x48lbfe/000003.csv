@@ -1,0 +1,4 @@
+"0","```r
+amBarplot(x = \"countries\", y = \"n\", data = t_count,
+          labelRotation = -45, main=\"Nombre de films par pays\", horiz = TRUE, groups_color = \"green\")
+```"

@@ -1,0 +1,26 @@
+{
+    "id": "5EA07949",
+    "path": "~/R/M1 MAS/semestre 2/visualisation/projet/spotify/shiny/movie/server.R",
+    "project_path": "server.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1646824105524.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "138,83",
+        "scrollLine": "123"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1647194733,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1647194733072,
+    "read_only": false,
+    "read_only_alternatives": []
+}

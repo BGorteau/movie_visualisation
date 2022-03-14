@@ -1,0 +1,4 @@
+"0","```r
+amBarplot(x = \"actors\", y = \"n\", data = t_act,
+          labelRotation = -45, main=\"Nombre de films par acteur\", horiz = TRUE, groups_color = \"red\")
+```"

@@ -1,0 +1,11 @@
+"0","```r
+realisateurs <- c()
+for(i in OMDB$Director){
+  for(j in str_split(i,\", \")){
+    realisateurs <- c(realisateurs, j)
+  }
+}
+t_real <- as_tibble(table(realisateurs))
+t_real <- arrange(t_real,-n)[c(1:10),]
+t_real
+```"

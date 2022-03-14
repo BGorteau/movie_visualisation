@@ -1,0 +1,8 @@
+"0","realisators <- function(film){"
+"0","      real <- c()"
+"0","      movie <- filter(OMDB, Title== film)"
+"0","      for(i in movie[9]){"
+"0","        real <- c(real,i)"
+"0","      }"
+"0","      return(real[1])"
+"0","    }"

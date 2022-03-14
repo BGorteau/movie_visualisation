@@ -20,38 +20,42 @@ shinyUI(fluidPage(
     tags$head(
         tags$style(
             HTML("
-      @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
       body {
-        background-color: white;
+        background-color: #DCDCDC;
         color: black;
-        font-family : 'Bitter';
+        font-family : 'Roboto Slab';
       }
       #infos{
-      background-color : #FFE4C4;
+      background-color : rgb(245,197,24);
+      width : 370px;
+      border: 3px solid black;
+      border-radius : 15px;
+      padding: 5px;
       }
       #notes{
-      width : 400px;
+      width : 370px;
       height : 200px;
+      background-color : rgb(245,197,24);
+      border: 3px solid black;
       }
       ")
         )
     ),
-    # Application title
-    titlePanel("History of cinema"),
     #Page de navigation
-    navbarPage("My Application",
+    navbarPage("History of Cinema",
                # Page 1
                tabPanel("History of cinema"
                         ),
                # Page 2
                tabPanel("Moteur de recherche",
-                    splitLayout(
+                    verticalLayout(
+                      # Barre de recherhe
+                      textInput(inputId = "mname", label = "Chercher un film :", value = "Fargo"),
+                      splitLayout(
                         verticalLayout(
-                        # Barre de recherhe
-                        textInput(inputId = "mname", label = "Chercher un film :", value = "Fargo"),
                         #Nom du réalisateur
                         box(id = "infos",title = "Informations",
-                            solidHeader = TRUE,
                             h4("Réalisateur(s) :"),
                             textOutput("real"),
                             h4("Récompenses :"),
@@ -59,8 +63,8 @@ shinyUI(fluidPage(
                             h4("Notes :"),
                         # Notes ImDb et Metascore
                         box(id = "notes",splitLayout(
-                        amChartsOutput(outputId = "ImDb_note"),
-                        amChartsOutput(outputId = "Metascore")
+                        amChartsOutput(outputId = "ImDb_note",  height = "180px", width = "160px"),
+                        amChartsOutput(outputId = "Metascore", height = "180px", width = "160px")
                         ))
                         ),
                         # Affichage tu tableau dees films conseillés
@@ -70,7 +74,8 @@ shinyUI(fluidPage(
                             h4("Films similaires :"),
                             dataTableOutput(outputId = "table_film")
                         )
-                    )      
+                    ) 
+                    )
                 ),
                tabPanel("Component 3")
     ),
